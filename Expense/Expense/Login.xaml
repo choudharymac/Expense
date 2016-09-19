@@ -29,7 +29,7 @@
       </ResourceDictionary>
     </Grid.Resources>
     <Label x:Name="titleLabel"   FontSize="Medium"  Text="Enter Your Passcode"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
-
+     
     <Label x:Name="displayLabel"                Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"                FontSize="Large"                LineBreakMode="HeadTruncation"                VerticalOptions="Center"                HorizontalTextAlignment="End" />
     <Button x:Name="backspaceButton"               Text="&#x21E6;"                               Grid.Row="1" Grid.Column="2"                   Clicked="OnBackspaceButtonClicked" />
     <Button Text="7" StyleId="7"                 Grid.Row="2" Grid.Column="0"                 Clicked="OnDigitButtonClicked" />

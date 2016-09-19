@@ -17,6 +17,8 @@ namespace Expense
             titleLabel.HorizontalOptions = LayoutOptions.Start;
             titleLabel.VerticalOptions = LayoutOptions.Center;
             displayLabel.Text = "";
+            titleLabel.FontAttributes= FontAttributes.Bold;
+           
 
         }
         private void OnBackspaceButtonClicked(object sender, EventArgs e)
@@ -26,13 +28,22 @@ namespace Expense
         }
         private void OnDigitButtonClicked(object sender, EventArgs e)
         {
+            if (displayLabel.Text.Equals("Failure"))
+            {
+                displayLabel.Text = "";
+                displayLabel.Text = displayLabel.Text + (sender as Button).Text;
+            }else
             if (displayLabel.Text.Length <4)
                 displayLabel.Text = displayLabel.Text + (sender as Button).Text;
+           
         }
         private void OnValidateClicked(object sender, EventArgs e)
         {
-            if ((sender as Button).Text.Equals("OK"))
+            if ((sender as Button).Text.Equals("OK") && displayLabel.Text.Equals("1234"))
+            {
                 displayLabel.Text = "Success";
+                Navigation.PushModalAsync(new Dashboard());
+            }
             else
                 displayLabel.Text = "Failure";
         }
