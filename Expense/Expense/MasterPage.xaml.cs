@@ -10,18 +10,26 @@ namespace Expense
 {
     public partial class MasterPage : ContentPage
     {
+        
         public ListView ListView { get { return listView; } }
 
         public MasterPage()
         {
 
             InitializeComponent();
+           
             var masterPageItems = new List<DrawerItem>();
+           
             masterPageItems.Add(new DrawerItem
             {
                 Title = "Contacts",
-                IconSource = "icon.png"
+                IconSource = "profile.png"
             });
+           masterPageItems.Add(new DrawerItem
+            {
+                Title = "Logout",
+                IconSource = "profile.png"
+           });
             listView.ItemsSource = masterPageItems;
         }
 

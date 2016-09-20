@@ -4,18 +4,42 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
   x:Class="Expense.MasterPage"
   x:Name="masterPage"
-  Padding="0,40,0,0"
+  Padding="10,40,10,10"
   Icon="hamburger.png"
-  Title="Personal Organiser">
+  Title="Expense">
   <ContentPage.Content>
+    
     <StackLayout VerticalOptions="FillAndExpand">
-      <ListView x:Name="listView" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
+      <StackLayout VerticalOptions="Start">
+        <Label x:Name="dashLabel"  HorizontalTextAlignment="Center" FontFamily="Segoe UI"  FontSize="Medium"  Text="Choose Categories" />
+        <Label HorizontalTextAlignment="Center" FontSize="Medium"  />
+      </StackLayout>
+     
+      <ListView x:Name="listView" VerticalOptions="FillAndExpand" SeparatorVisibility="Default"  >
         <ListView.ItemTemplate>
+          
           <DataTemplate>
-            <ImageCell Text="{Binding Title}" ImageSource="{Binding IconSource}" />
+              <!--<ImageCell  Text="{Binding Title}"  ImageSource="{Binding IconSource}"  />-->
+            <ViewCell>
+              <Grid Padding="5">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="20"></RowDefinition>
+                  <RowDefinition Height="20"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="40"></ColumnDefinition>
+                  <ColumnDefinition Width="40"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Source="{Binding IconSource}" Aspect="AspectFit"/>
+                <Label Grid.Row="0" Grid.Column="4" Text="{Binding Title}" HorizontalTextAlignment="Center" LineBreakMode="TailTruncation"></Label>
+               
+              </Grid>
+            </ViewCell>
           </DataTemplate>
+          
         </ListView.ItemTemplate>
       </ListView>
+     
     </StackLayout>
   </ContentPage.Content>
 </ContentPage>
