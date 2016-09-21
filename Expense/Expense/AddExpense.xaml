@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Add Expense"
+             Padding="10,20,10,10"
+             x:Class="Expense.AddExpense">
+  <StackLayout>
+    <Label Text="Today's Date" TextColor="#5ea1d4" VerticalOptions="Center" HorizontalOptions="Center" />
+    <Image VerticalOptions="Center" HorizontalOptions="Center"    Source="cal.png" Aspect="AspectFit"/>
+    <Label x:Name="adddate"  Text="{Binding date}"  VerticalOptions="Center" HorizontalOptions="Center" />
+    <Grid  VerticalOptions="Center" HorizontalOptions="Center">
+      <Grid.WidthRequest>
+        <OnPlatform x:TypeArguments="x:Double"
+         iOS="180"
+         Android="300"
+         WinPhone="240" />
+      </Grid.WidthRequest>
+      <Grid.HeightRequest>
+        <OnPlatform x:TypeArguments="x:Double"
+                    iOS="50"
+                    Android="50"
+                    WinPhone="50" />
+      </Grid.HeightRequest>
+      <Label Grid.Row="0"  TextColor="#4CAF50" Grid.RowSpan="2" Grid.Column="1"  Text="AUD" FontSize="Medium" />
+      <Label x:Name="amount"  Grid.Row="0"   Grid.RowSpan="2" Grid.Column="3"  Text="{Binding date}" FontSize="Large" />
+    </Grid>
+    <Entry  Placeholder="Enter Note (if required)" VerticalOptions="Center" HorizontalOptions="Center" />
+    <Grid
+   RowSpacing="3"
+   ColumnSpacing="3"
+   VerticalOptions="Center"
+   HorizontalOptions="Center">
+      <Grid.WidthRequest>
+        <OnPlatform x:TypeArguments="x:Double"
+         iOS="180"
+         Android="300"
+         WinPhone="240" />
+      </Grid.WidthRequest>
+      <Grid.HeightRequest>
+        <OnPlatform x:TypeArguments="x:Double"
+                    iOS="300"
+                    Android="400"
+                    WinPhone="400" />
+      </Grid.HeightRequest>
+      <Grid.Resources>
+        <ResourceDictionary>
+          <Style TargetType="Button">
+            <Setter Property="FontSize" Value="Medium" />
+            <Setter Property="BorderWidth" Value="1" />
+          </Style>
+        </ResourceDictionary>
+      </Grid.Resources>
+      <Label x:Name="displayLabel"                Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"                FontSize="Large"                LineBreakMode="HeadTruncation"                VerticalOptions="Center"                HorizontalTextAlignment="End" />
+      <Button x:Name="backspaceButton"               Text="&#x21E6;"                               Grid.Row="1" Grid.Column="3"                   Clicked="OnBackspaceButtonClicked" />
+      <Button Text="7" StyleId="7"                 Grid.Row="2" Grid.Column="0"                 Clicked="OnDigitButtonClicked" />
+      <Button Text="8" StyleId="8"                 Grid.Row="2" Grid.Column="1"                 Clicked="OnDigitButtonClicked" />
+      <Button Text="9" StyleId="9"                 Grid.Row="2" Grid.Column="2"                 Clicked="OnDigitButtonClicked" />
+      <Button Text="/" StyleId="10"                 Grid.Row="2" Grid.Column="3"                 Clicked="div" />
+      <Button Text="4" StyleId="4"                 Grid.Row="3" Grid.Column="0"                 Clicked="OnDigitButtonClicked" />
+      <Button Text="5" StyleId="5"                 Grid.Row="3" Grid.Column="1"                 Clicked="OnDigitButtonClicked" />
+      <Button Text="6" StyleId="6"                 Grid.Row="3" Grid.Column="2"                 Clicked="OnDigitButtonClicked" />
+      <Button Text="*" StyleId="11"                 Grid.Row="3" Grid.Column="3"                 Clicked="mul" />
+       <Button Text="1" StyleId="1"                 Grid.Row="4" Grid.Column="0"                 Clicked="OnDigitButtonClicked" />
+      <Button Text="2" StyleId="2"                 Grid.Row="4" Grid.Column="1"                 Clicked="OnDigitButtonClicked" />
+      <Button Text="3" StyleId="3"                  Grid.Row="4" Grid.Column="2"                Clicked="OnDigitButtonClicked" />
+      <Button Text="-" StyleId="12"                 Grid.Row="4" Grid.Column="3"                 Clicked="sub" />
+      <Button Text="0" StyleId="0"                 Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"                 Clicked="OnDigitButtonClicked" />
+      <Button Text="OK" StyleId="."                 Grid.Row="5" Grid.Column="2"                 Clicked="OnValidateClicked" />
+      <Button Text="+" StyleId="13"                 Grid.Row="5" Grid.Column="3"                 Clicked="add" />
+
+    </Grid>
+    <Button BackgroundColor="#3F51B5" Text="Select Category" TextColor="#FFFFFF" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Clicked="select"></Button>
+  </StackLayout>
+</ContentPage>

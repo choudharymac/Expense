@@ -13,6 +13,21 @@ namespace Expense
         public Feed()
         {
             InitializeComponent();
+            InfiniteLoop();
+            totalamount.Text = "AUD " + "200";
+            moneyspend.Text = "AUD " + "20";
+
+
+        }
+        async void InfiniteLoop() {
+            while (true) {
+                currentdate.Text = DateTime.Now.ToString("HH:mm:ss");
+                double x= DateTime.Now.Hour * 0.1;
+                if (x > 0.9)
+                    x = 0.9;
+               await progress.ProgressTo(x, 250, Easing.Linear);
+                await Task.Delay(100);
+            }
         }
     }
 }

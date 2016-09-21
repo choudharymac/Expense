@@ -2,6 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Feeds"
+             Padding="10,20,10,10"
              x:Class="Expense.Feed">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <StackLayout>
+    <Image VerticalOptions="Center" HorizontalOptions="Center"    Source="clock.png" Aspect="AspectFit"/>
+    <Label x:Name="currentdate"  Text="{Binding date}"  VerticalOptions="Center" HorizontalOptions="Center" />
+    <ProgressBar x:Name="progress" Progress="0.5"  VerticalOptions="Start" HorizontalOptions="FillAndExpand" />
+    <Label  TextColor="#5ea1d4" Text="Total Amount :"  VerticalOptions="Start" HorizontalOptions="Start" />
+    <Label x:Name="totalamount"  Text="{Binding date}"  VerticalOptions="Start" HorizontalOptions="Start" />
+    <Label TextColor="#5ea1d4" Text="Money Spent :"  VerticalOptions="Start" HorizontalOptions="Start" />
+    <Label x:Name="moneyspend"  Text="{Binding date}"  VerticalOptions="Start" HorizontalOptions="Start" />
+    <ListView x:Name="listView" VerticalOptions="FillAndExpand" SeparatorVisibility="None"  >
+      
+     </ListView>
+    <Button BackgroundColor="#FF5252" Text="Add Expense" TextColor="#FFFFFF" VerticalOptions="Center" HorizontalOptions="FillAndExpand"></Button>
+  </StackLayout>
+ 
+ 
 </ContentPage>
