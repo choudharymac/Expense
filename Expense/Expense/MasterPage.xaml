@@ -4,42 +4,21 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
   x:Class="Expense.MasterPage"
   x:Name="masterPage"
-  Padding="10,40,10,10"
+  Padding="70,40,10,10"
   Icon="hamburger.png"
+ 
   Title="Expense">
-  <ContentPage.Content>
-    
+  <ContentPage.Content  >
     <StackLayout VerticalOptions="FillAndExpand">
-      <StackLayout VerticalOptions="Start">
-        <Label x:Name="dashLabel"  HorizontalTextAlignment="Center" FontFamily="Segoe UI"  FontSize="Medium"  Text="Choose Categories" />
-        <Label HorizontalTextAlignment="Center" FontSize="Medium"  />
-      </StackLayout>
-     
-      <ListView x:Name="listView" VerticalOptions="FillAndExpand" SeparatorVisibility="Default"  >
+      <ListView x:Name="listView" VerticalOptions="FillAndExpand" SeparatorVisibility="None"  >
         <ListView.ItemTemplate>
-          
+
           <DataTemplate>
-              <!--<ImageCell  Text="{Binding Title}"  ImageSource="{Binding IconSource}"  />-->
-            <ViewCell>
-              <Grid Padding="5">
-                <Grid.RowDefinitions>
-                  <RowDefinition Height="20"></RowDefinition>
-                  <RowDefinition Height="20"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                  <ColumnDefinition Width="40"></ColumnDefinition>
-                  <ColumnDefinition Width="40"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Image Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" Source="{Binding IconSource}" Aspect="AspectFit"/>
-                <Label Grid.Row="0" Grid.Column="4" Text="{Binding Title}" HorizontalTextAlignment="Center" LineBreakMode="TailTruncation"></Label>
-               
-              </Grid>
-            </ViewCell>
+            <ImageCell TextColor="Black" ImageSource="{Binding IconSource}" Text="{Binding Title}"/>
           </DataTemplate>
-          
+
         </ListView.ItemTemplate>
       </ListView>
-     
     </StackLayout>
   </ContentPage.Content>
 </ContentPage>
