@@ -15,7 +15,7 @@
     <ListView x:Name="listView" VerticalOptions="FillAndExpand" SeparatorVisibility="None"  >
       
      </ListView>
-    <Button BackgroundColor="#FF5252" Text="Add Expense" TextColor="#FFFFFF" VerticalOptions="Center" HorizontalOptions="FillAndExpand"></Button>
+    <Button Clicked="addexpensefeed" BackgroundColor="#FF5252" Text="Logout" TextColor="#FFFFFF" VerticalOptions="End" HorizontalOptions="End" ></Button>
   </StackLayout>
  
  

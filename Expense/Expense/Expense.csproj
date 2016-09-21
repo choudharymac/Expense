@@ -39,10 +39,25 @@
       <DependentUpon>AddExpense.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.cs" />
+    <Compile Include="CashWallet.xaml.cs">
+      <DependentUpon>CashWallet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Category.xaml.cs">
+      <DependentUpon>Category.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Compare.xaml.cs">
+      <DependentUpon>Compare.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
     <Compile Include="DrawerItem.cs" />
+    <Compile Include="ExpenseDetail.xaml.cs">
+      <DependentUpon>ExpenseDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenseStat.xaml.cs">
+      <DependentUpon>ExpenseStat.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Feed.xaml.cs">
       <DependentUpon>Feed.xaml</DependentUpon>
     </Compile>
@@ -53,6 +68,9 @@
       <DependentUpon>MasterPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SetAlert.xaml.cs">
+      <DependentUpon>SetAlert.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Splash.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +117,42 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AddExpense.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExpenseDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CashWallet.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Category.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExpenseStat.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SetAlert.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Compare.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

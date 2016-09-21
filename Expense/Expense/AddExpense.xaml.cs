@@ -65,6 +65,7 @@ namespace Expense
             displayLabel.Text = "";
             Globals.Expired = "/";
         }
+      
         private void operation()
         {
             int x, y, z;

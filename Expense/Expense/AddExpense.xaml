@@ -69,6 +69,6 @@
       <Button Text="+" StyleId="13"                 Grid.Row="5" Grid.Column="3"                 Clicked="add" />
 
     </Grid>
-    <Button BackgroundColor="#3F51B5" Text="Select Category" TextColor="#FFFFFF" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Clicked="select"></Button>
+    <Button BackgroundColor="#3F51B5" Text="Add To Feeds" TextColor="#FFFFFF" VerticalOptions="Center" HorizontalOptions="FillAndExpand" ></Button>
   </StackLayout>
 </ContentPage>

@@ -30,7 +30,7 @@ namespace Expense
             {
                 Title = "Expense Details",
                 IconSource = "check.png",
-                TargetType = typeof(AddExpense)
+                TargetType = typeof(ExpenseDetail)
             });
             masterPageItems.Add(new DrawerItem
             {
@@ -42,31 +42,31 @@ namespace Expense
             {
                 Title = "Cash Wallet",
                 IconSource = "wallet.png",
-                TargetType = typeof(AddExpense)
+                TargetType = typeof(CashWallet)
             });
             masterPageItems.Add(new DrawerItem
             {
                 Title = "Categories",
                IconSource = "category.png",
-                TargetType = typeof(AddExpense)
+                TargetType = typeof(Category)
             });
             masterPageItems.Add(new DrawerItem
             {
                 Title = "Expense Stats",
                 IconSource = "expense.png",
-                TargetType = typeof(AddExpense)
+                TargetType = typeof(ExpenseStat)
             });
             masterPageItems.Add(new DrawerItem
             {
                 Title = "Set Alert",
                 IconSource = "warning.png",
-                TargetType = typeof(AddExpense)
+                TargetType = typeof(SetAlert)
             });
             masterPageItems.Add(new DrawerItem
             {
                 Title = "Compare Expense",
                 IconSource = "comparison.png",
-                TargetType = typeof(AddExpense)
+                TargetType = typeof(Compare)
             });
             listView.ItemsSource = masterPageItems;
         }
