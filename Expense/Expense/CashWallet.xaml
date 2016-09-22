@@ -2,6 +2,27 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               Title="Wallet"
+               Padding="20,30,20,20"
              x:Class="Expense.CashWallet">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <StackLayout>
+    <Label Text="Money Wallet" FontSize="Large" TextColor="#5ea1d4" VerticalOptions="Center" HorizontalOptions="Center" />
+    <Entry x:Name="wallet" Placeholder="Enter a amount" VerticalOptions="Center" HorizontalOptions="FillAndExpand"></Entry>
+    <Button Text="Add" BackgroundColor="#3F51B5" TextColor="#FFFFFF" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Clicked="addmore"/>
+    <Label  TextColor="#5ea1d4" Text="Amount Left :"  VerticalOptions="Start" HorizontalOptions="Start" />
+    <Label x:Name="amountleft"  Text="{Binding amount}"  VerticalOptions="Start" HorizontalOptions="Start" />
+    <Label VerticalOptions="Start" HorizontalOptions="Start" />
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Label  Text="Amount History" Grid.Row="0" Grid.Column="0" />
+      <Image x:Name="moneywallet" Source="wallet.png" Grid.Row="0" Grid.Column="1"/>
+    </Grid>
+  </StackLayout>
+
 </ContentPage>

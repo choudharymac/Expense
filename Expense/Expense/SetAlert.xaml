@@ -1,7 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-              Title="Add Alert"
+             Title="Alert"
+             Padding="20,30,20,20"
              x:Class="Expense.SetAlert">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
-</ContentPage>
+  <StackLayout>
+    <Label Text="Money Wallet" FontSize="Large" TextColor="#5ea1d4" VerticalOptions="Center" HorizontalOptions="Center" />
+    <Entry x:Name="message" Placeholder="Enter a message" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+    <Entry x:Name="alertamount" Placeholder="Enter a amount" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+  </StackLayout>
+  </ContentPage>

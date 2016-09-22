@@ -2,6 +2,63 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               Title="Category"
+              Padding="20,30,20,20"
              x:Class="Expense.Category">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <StackLayout>
+  <Label Text="Categories" FontSize="Large" TextColor="#5ea1d4"  VerticalOptions="Center" HorizontalOptions="Center" />
+    <Label FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" />
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      
+      <!--First Row-->
+      <Label x:Name="cat1" Text="AUD 90" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center"  />
+      <Label  Text="Stationary" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center"  />
+      <Image x:Name="img1" Source="bookshelf.png" Grid.Row="0" Grid.Column="0"  />
+
+      <Label x:Name="cat2" Text="AUD 120" Grid.Row="2" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"  />
+      <Label  Text="Food" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"  />
+      <Image x:Name="img2" Source="dinner.png" Grid.Row="0" Grid.Column="1"  />
+
+      <Label x:Name="cat3" Text="AUD 200" Grid.Row="2" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center"  />
+      <Label  Text="Bills" Grid.Row="1" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center"  />
+      <Image x:Name="img3" Source="linechart.png" Grid.Row="0" Grid.Column="2"  />
+      
+      <!--Second Row-->
+      
+      <Label x:Name="cat4" Text="AUD 500" Grid.Row="6" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center"  />
+      <Label  Text="Clothing" Grid.Row="5" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center"  />
+      <Image x:Name="img4" Source="shirt.png" Grid.Row="4" Grid.Column="0"  />
+
+      <Label x:Name="cat5" Text="AUD 352" Grid.Row="6" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"  />
+      <Label  Text="Groceries" Grid.Row="5" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"  />
+      <Image x:Name="img5" Source="groceries.png" Grid.Row="4" Grid.Column="1"  />
+
+      <Label x:Name="cat6" Text="AUD 200" Grid.Row="6" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center"  />
+      <Label  Text="Entertainment" Grid.Row="5" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center"  />
+      <Image x:Name="img6" Source="theater.png" Grid.Row="4" Grid.Column="2"  />
+      
+      <!--third Row-->
+      
+      <Label x:Name="cat7" Text="AUD 70" Grid.Row="10" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center"  />
+      <Label  Text="Transport" Grid.Row="9" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center"  />
+      <Image x:Name="img7" Source="minivan.png" Grid.Row="8" Grid.Column="0"  />
+
+      <Label x:Name="cat8" Text="AUD 147" Grid.Row="10" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"  />
+      <Label  Text="Phone" Grid.Row="9" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"  />
+      <Image x:Name="img8" Source="phone.png" Grid.Row="8" Grid.Column="1"  />
+
+      <Label x:Name="cat9" Text="AUD 1000" Grid.Row="10" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center"  />
+      <Label  Text="Electronics" Grid.Row="9" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center"  />
+      <Image x:Name="img9" Source="devices.png" Grid.Row="8" Grid.Column="2"  />
+  
+    </Grid>
+   </StackLayout>
+ 
 </ContentPage>
