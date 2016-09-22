@@ -18,6 +18,9 @@ namespace Expense
         public CashWallet()
         {
             InitializeComponent();
+            if(GlobalWallet.Amount>0)
+                amountleft.Text = GlobalWallet.Amount + " AUD";
+            else
             amountleft.Text ="0" + " AUD";
            
         }
@@ -25,6 +28,7 @@ namespace Expense
         {
             int sum = Int32.Parse(amountleft.Text.Substring(0, amountleft.Text.Length - 4))+ Int32.Parse(wallet.Text);
             amountleft.Text = sum + " AUD";
+            GlobalWallet.Amount = sum;
             masterPageItems.Add(new AlertDrawerItems
             {
                 Alert = DateTime.Today.ToString("dd-MM-yyyy"),

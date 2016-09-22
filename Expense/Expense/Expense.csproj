@@ -64,6 +64,8 @@
     <Compile Include="Feed.xaml.cs">
       <DependentUpon>Feed.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GlobalAlert.cs" />
+    <Compile Include="GlobalWallet.cs" />
     <Compile Include="GlobalAmount.cs" />
     <Compile Include="GlobalVariable.cs" />
     <Compile Include="IAndroidPopUp.cs" />

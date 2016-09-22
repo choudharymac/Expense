@@ -12,7 +12,8 @@ namespace Expense
     public partial class ExpenseDetail : ContentPage
     {
         public ListView ListView { get { return listView; } }
-       
+        int i = 0;
+
         ObservableCollection<AlertDrawerItems> masterPageItems = new ObservableCollection<AlertDrawerItems>();
         public ExpenseDetail()
         {
@@ -26,34 +27,49 @@ namespace Expense
 
         }
 
-        private void search( object sender, EventArgs args)
+        private void search(object sender, EventArgs args)
         {
-            masterPageItems.Add(new AlertDrawerItems
+            if (i == 0)
             {
-                Alert = "Electronics",
-                Amount = "300 USD",
-                IconSource = "wallet.png",
-            });
-            masterPageItems.Add(new AlertDrawerItems
+                Random r = new Random();
+                String[] cat = { " Stationary", " Food ", " Bills ", "Clothing ", "Groceries ", " Entertainment ", " Transport ", "Phone ", "Electronics " };
+
+                masterPageItems.Add(new AlertDrawerItems
+                {
+                    Alert = cat[r.Next(0, 8)],
+                    Amount = r.Next(0,700)+" USD",
+                    IconSource = "wallet.png",
+                });
+                masterPageItems.Add(new AlertDrawerItems
+                {
+                    Alert = cat[r.Next(0, 8)],
+                    Amount = r.Next(0, 700) + " USD",
+                    IconSource = "wallet.png",
+                });
+                masterPageItems.Add(new AlertDrawerItems
+                {
+                    Alert = cat[r.Next(0, 8)],
+                    Amount = r.Next(0, 700) + " USD",
+                    IconSource = "wallet.png",
+                });
+                masterPageItems.Add(new AlertDrawerItems
+                {
+                    Alert = cat[r.Next(0, 8)],
+                    Amount = r.Next(0, 700) + " USD",
+                    IconSource = "wallet.png",
+                });
+                listView.ItemsSource = masterPageItems;
+                i = 1;
+            }
+
+            else
             {
-                Alert = "Transport",
-                Amount = "20 USD",
-                IconSource = "wallet.png",
-            });
-            masterPageItems.Add(new AlertDrawerItems
-            {
-                Alert = "Entertainment",
-                Amount = "110 USD",
-                IconSource = "wallet.png",
-            });
-            masterPageItems.Add(new AlertDrawerItems
-            {
-                Alert = "Stationary",
-                Amount = "15 USD",
-                IconSource = "wallet.png",
-            });
-            listView.ItemsSource = masterPageItems;
+                i = 1;
+                if (Device.OS == TargetPlatform.Android)
+                {
+                    DependencyService.Get<IAndroidPopUp>().ShowToast("No more Results");
+                }
+            }
         }
-        
     }
 }

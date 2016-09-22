@@ -18,17 +18,31 @@ namespace Expense
         public SetAlert()
         {
             InitializeComponent();
-
-          masterPageItems.Add(new AlertDrawerItems
+            if (!GlobalAlert.Cat.Equals(""))
             {
-                Alert = "Low Balance",
-                Amount="30 USD",
-                IconSource = "bell.png",
-            });
-            listView.ItemsSource = masterPageItems;
+                masterPageItems.Add(new AlertDrawerItems
+                {
+                    Alert = GlobalAlert.Cat,
+                    Amount = GlobalAlert.Amount+" USD",
+                    IconSource = "bell.png",
+                });
+                listView.ItemsSource = masterPageItems;
+            }
+            else
+            {
+                masterPageItems.Add(new AlertDrawerItems
+                {
+                    Alert = "Low Balance",
+                    Amount = "30 USD",
+                    IconSource = "bell.png",
+                });
+                listView.ItemsSource = masterPageItems;
+            }
         }
         private void OnAddAlert(object sender, EventArgs args)
         {
+            GlobalAlert.Cat = message.Text;
+            GlobalAlert.Amount = Int32.Parse(alertamount.Text);
           masterPageItems.Add(new AlertDrawerItems
             {
                 Alert = message.Text,
