@@ -12,7 +12,7 @@ namespace Expense
         public App()
         {
             // The root page of your application
-                MainPage = new Dashboard();
+                MainPage = new Splash();
         }
 
         protected override void OnStart()

@@ -10,13 +10,23 @@ namespace Expense
 {
     public partial class AddExpense : ContentPage
     {
+
         public AddExpense()
         {
             InitializeComponent();
             adddate.Text = DateTime.Today.ToString("dd-MM-yyyy");
             displayLabel.Text = "";
             amount.Text = "0";
+            IndustryTypePicker1.SelectedIndexChanged += IndustryTypePicker1_SelectedIndexChanged;
         }
+
+        private void IndustryTypePicker1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int i= (sender as Picker).SelectedIndex;
+            String[] cat = { " Stationary", " Food ", " Bills ", "Clothing ", "Groceries ", " Entertainment ", " Transport ", "Phone ", "Electronics " };
+            GlobalVariable.Cat = cat[i];
+        }
+
         private void OnBackspaceButtonClicked(object sender, EventArgs e)
         {
             if (displayLabel.Text.Length > 1)
@@ -38,7 +48,19 @@ namespace Expense
             operation();
             Globals.Expired = "";
            
+
         }
+        private void onaddfeed(object sender, EventArgs e)
+        {
+            amount.Text = displayLabel.Text;
+            GlobalAmount.Amount = Int32.Parse(amount.Text);
+            displayLabel.Text = "";
+            amount.Text = "0";
+            if (Device.OS == TargetPlatform.Android)
+            {
+                DependencyService.Get<IAndroidPopUp>().ShowToast("Added to Feed");
+             }
+} 
         private void add(object sender, EventArgs e)
         {
             amount.Text = displayLabel.Text;

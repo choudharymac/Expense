@@ -5,7 +5,7 @@
              Padding="20,30,20,20"
              x:Class="Expense.SetAlert">
   <StackLayout>
-    <Label Text="Money Wallet" FontSize="Large" TextColor="#5ea1d4" VerticalOptions="Center" HorizontalOptions="Center" />
+    <Label Text="Add Alert" FontSize="Large" TextColor="#5ea1d4" VerticalOptions="Center" HorizontalOptions="Center" />
     <Entry x:Name="message" Placeholder="Enter a message" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
     <Entry x:Name="alertamount" Placeholder="Enter a amount" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
     <Button Text="Add Alert" BackgroundColor="#3F51B5" TextColor="#FFFFFF" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Clicked="OnAddAlert" />

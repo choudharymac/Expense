@@ -24,7 +24,20 @@
       <Label Grid.Row="0"  TextColor="#4CAF50" Grid.RowSpan="2" Grid.Column="1"  Text="AUD" FontSize="Medium" />
       <Label x:Name="amount"  Grid.Row="0"   Grid.RowSpan="2" Grid.Column="3"  Text="{Binding date}" FontSize="Large" />
     </Grid>
-    <Entry  Placeholder="Enter Note (if required)" VerticalOptions="Center" HorizontalOptions="Center" />
+    <!--<Entry  Placeholder="Enter Note (if required)" VerticalOptions="Center" HorizontalOptions="Center" />-->
+    <Picker x:Name="IndustryTypePicker1" Title="Pick any one Category" SelectedIndex="{Binding Industry}" VerticalOptions="Center"  HorizontalOptions="Center">
+      <Picker.Items>
+        <x:String>Stationary</x:String>
+        <x:String>Food</x:String>
+        <x:String>Bills</x:String>
+        <x:String>Clothing</x:String>
+        <x:String>Groceries</x:String>
+        <x:String>Entertainment</x:String>
+        <x:String>Transport</x:String>
+        <x:String>Phone</x:String>
+        <x:String>Electronics</x:String>
+      </Picker.Items>
+    </Picker>
     <Grid
    RowSpacing="3"
    ColumnSpacing="3"
@@ -69,6 +82,6 @@
       <Button Text="+" StyleId="13"                 Grid.Row="5" Grid.Column="3"                 Clicked="add" />
 
     </Grid>
-    <Button BackgroundColor="#3F51B5" Text="Add To Feeds" TextColor="#FFFFFF" VerticalOptions="Center" HorizontalOptions="FillAndExpand" ></Button>
+    <Button BackgroundColor="#3F51B5" Text="Add To Feeds" TextColor="#FFFFFF" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Clicked="onaddfeed"></Button>
   </StackLayout>
 </ContentPage>

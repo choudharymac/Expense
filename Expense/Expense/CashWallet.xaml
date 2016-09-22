@@ -23,6 +23,31 @@
       <Label  Text="Amount History" Grid.Row="0" Grid.Column="0" />
       <Image x:Name="moneywallet" Source="wallet.png" Grid.Row="0" Grid.Column="1"/>
     </Grid>
+    <ListView x:Name="listView" VerticalOptions="Fill" SeparatorVisibility="None" >
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+              </Grid.ColumnDefinitions>
+              <Image Grid.Row="1"  Grid.Column="0"    Source="{Binding IconSource}" Aspect="AspectFit"/>
+              <StackLayout Grid.Row="1" Grid.Column="1" >
+                <Label  VerticalOptions="Center"  HorizontalOptions="Center"  Text="{Binding Alert}"  LineBreakMode="TailTruncation"></Label>
+              </StackLayout>
+              <StackLayout Grid.Row="1" Grid.Column="2" >
+                <Label  VerticalOptions="Center"  HorizontalOptions="Center"  Text="{Binding Amount}"  LineBreakMode="TailTruncation"></Label>
+              </StackLayout>
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
   </StackLayout>
 
 </ContentPage>

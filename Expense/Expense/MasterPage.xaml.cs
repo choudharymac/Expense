@@ -64,8 +64,8 @@ namespace Expense
             });
             masterPageItems.Add(new DrawerItem
             {
-                Title = "Compare Expense",
-                IconSource = "comparison.png",
+                Title = "About Us",
+                IconSource = "info.png",
                 TargetType = typeof(Compare)
             });
             listView.ItemsSource = masterPageItems;

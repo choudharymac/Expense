@@ -19,6 +19,7 @@ namespace Expense
             displayLabel.Text = "";
             titleLabel.FontAttributes= FontAttributes.Bold;
            
+           
 
         }
         private void OnBackspaceButtonClicked(object sender, EventArgs e)
@@ -45,7 +46,10 @@ namespace Expense
                 Navigation.PushModalAsync(new Dashboard());
             }
             else
-                displayLabel.Text = "Failure";
+                 if (Device.OS == TargetPlatform.Android)
+            {
+                DependencyService.Get<IAndroidPopUp>().ShowToast("Wrong Passcode");
+            }
         }
     }
     

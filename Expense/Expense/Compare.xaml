@@ -1,7 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             Title="Compare Expense"
+             Title="About Us"
+                Padding="20,30,20,20"
              x:Class="Expense.Compare">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <StackLayout>
+    <Label   Text="About Us" FontSize="Large" TextColor="#5ea1d4" VerticalOptions="Center" HorizontalOptions="Center" />
+    <Label   Text="Made by"  VerticalOptions="Center" HorizontalOptions="Center" />
+      <Label   Text=""  VerticalOptions="Center" HorizontalOptions="Center" />
+      <Label   Text="Mukesh Chaodhary"  FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center" />
+       <Label   Text="and"  VerticalOptions="Center" HorizontalOptions="Center" />
+       <Label   Text="Baldeep Dhillon"  FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center" />
+       <Label   Text=""  VerticalOptions="Center" HorizontalOptions="Center" />
+    <Label   Text="Code  On "  FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center" />
+    <Image    Source="git.png" Aspect="AspectFit" />
+      <Label   Text="Video On" FontSize="Medium"  VerticalOptions="Center" HorizontalOptions="Center" />
+    <Image Source="youtube.png" Aspect="AspectFit" />
+  </StackLayout>
 </ContentPage>

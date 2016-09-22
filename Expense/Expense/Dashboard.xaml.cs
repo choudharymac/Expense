@@ -15,6 +15,7 @@ namespace Expense
             InitializeComponent();
             masterPage.ListView.ItemSelected += OnItemSelected;
         }
+
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var item = e.SelectedItem as DrawerItem;
@@ -24,6 +25,11 @@ namespace Expense
                 masterPage.ListView.SelectedItem = null;
                 IsPresented = false;
             }
+        }
+        protected override bool OnBackButtonPressed()
+        {
+            base.OnBackButtonPressed();
+            return false;
         }
     }
 }

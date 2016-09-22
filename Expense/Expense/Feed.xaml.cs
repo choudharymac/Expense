@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,13 +11,46 @@ namespace Expense
 {
     public partial class Feed : ContentPage
     {
+        public ListView ListView { get { return listView; } }
+
+        ObservableCollection<AlertDrawerItems> masterPageItems = new ObservableCollection<AlertDrawerItems>();
+
         public Feed()
         {
             InitializeComponent();
             InfiniteLoop();
-            totalamount.Text = "AUD " + "200";
-            moneyspend.Text = "AUD " + "20";
-            
+            totalamount.Text = "AUD " + "1000";
+            moneyspend.Text = "AUD " + "210";
+            if (!GlobalVariable.Cat.Equals(""))
+            {
+                masterPageItems.Add(new AlertDrawerItems
+                {
+                    Alert = GlobalVariable.Cat,
+                    Amount = GlobalAmount.Amount + " USD",
+                    IconSource = "wallet.png",
+                });
+
+            }
+            masterPageItems.Add(new AlertDrawerItems
+            {
+                Alert = "Food",
+                Amount ="30"+ " USD",
+                IconSource = "wallet.png",
+            });
+            masterPageItems.Add(new AlertDrawerItems
+            {
+                Alert = "Entertainment",
+                Amount = "150"+ " USD",
+                IconSource = "wallet.png",
+            });
+            masterPageItems.Add(new AlertDrawerItems
+            {
+                Alert = "Transport",
+                Amount = "30" + " USD",
+                IconSource = "wallet.png",
+            });
+            listView.ItemsSource = masterPageItems;
+
 
         }
         void addexpensefeed(object sender, EventArgs args)

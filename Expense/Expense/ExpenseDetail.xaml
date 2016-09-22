@@ -1,7 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-              Title="Expense Detail"
+              Title="Details"
+              Padding="20,30,20,20"
+              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              x:Class="Expense.ExpenseDetail">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <StackLayout>
+    <Label  x:Name="temp" Text="Pick a Date" FontSize="Large" TextColor="#5ea1d4" VerticalOptions="Center" HorizontalOptions="Center" />
+    <DatePicker x:Name="pickdate" VerticalOptions="Center" HorizontalOptions="Center" Date="{x:Static sys:DateTime.Now}">
+      <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+      <DatePicker.MinimumDate>
+        <sys:DateTime x:FactoryMethod="Parse">
+          <x:Arguments>
+            <x:String>Jan 1 2000</x:String>
+          </x:Arguments>
+        </sys:DateTime>
+      </DatePicker.MinimumDate>
+      <DatePicker.MaximumDate>
+        <sys:DateTime x:FactoryMethod="Parse">
+          <x:Arguments>
+            <x:String>Dec 31 2050</x:String>
+          </x:Arguments>
+        </sys:DateTime>
+      </DatePicker.MaximumDate>
+    </DatePicker>
+    <ListView x:Name="listView" VerticalOptions="Fill" SeparatorVisibility="None" >
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+              </Grid.ColumnDefinitions>
+              <Image Grid.Row="1"  Grid.Column="0"    Source="{Binding IconSource}" Aspect="AspectFit"/>
+              <StackLayout Grid.Row="1" Grid.Column="1" >
+                <Label  VerticalOptions="Center"  HorizontalOptions="Center"  Text="{Binding Alert}"  LineBreakMode="TailTruncation"></Label>
+              </StackLayout>
+              <StackLayout Grid.Row="1" Grid.Column="2" >
+                <Label  VerticalOptions="Center"  HorizontalOptions="Center"  Text="{Binding Amount}"  LineBreakMode="TailTruncation"></Label>
+              </StackLayout>
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+
+  <Button Clicked="search" BackgroundColor="#FF5252" Text="Show Result" TextColor="#FFFFFF" VerticalOptions="Center" HorizontalOptions="Center" ></Button>
+  </StackLayout>
+
 </ContentPage>
