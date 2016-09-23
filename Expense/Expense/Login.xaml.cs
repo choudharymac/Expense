@@ -26,6 +26,9 @@ namespace Expense
         {
             if(displayLabel.Text.Length>1)
             displayLabel.Text = displayLabel.Text.Remove(displayLabel.Text.Length - 1);
+           else if (displayLabel.Text.Length==1)
+                displayLabel.Text = "";
+
         }
         private void OnDigitButtonClicked(object sender, EventArgs e)
         {

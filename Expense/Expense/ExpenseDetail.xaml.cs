@@ -14,7 +14,7 @@ namespace Expense
         public ListView ListView { get { return listView; } }
         int i = 0;
 
-        ObservableCollection<AlertDrawerItems> masterPageItems = new ObservableCollection<AlertDrawerItems>();
+       
         public ExpenseDetail()
         {
             InitializeComponent();
@@ -24,6 +24,7 @@ namespace Expense
         private void Pickdate_DateSelected(object sender, DateChangedEventArgs e)
         {
             //  temp.Text = "hii"+e.NewDate+"how"+pickdate.Date;   Alert = pickdate.Date.Day + "-" + pickdate.Date.Month + "-" + pickdate.Date.Year,
+            i = 0;
 
         }
 
@@ -33,6 +34,7 @@ namespace Expense
             {
                 Random r = new Random();
                 String[] cat = { " Stationary", " Food ", " Bills ", "Clothing ", "Groceries ", " Entertainment ", " Transport ", "Phone ", "Electronics " };
+                ObservableCollection<AlertDrawerItems> masterPageItems = new ObservableCollection<AlertDrawerItems>();
 
                 masterPageItems.Add(new AlertDrawerItems
                 {
